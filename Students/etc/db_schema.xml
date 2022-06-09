@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="students" resource="default" engine="innodb" comment="Student Details Table">
+        <column xsi:type="int" name="id" padding="10" unsigned="true" nullable="false" identity="true" comment="Id"/>
+        <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false" comment="User Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Student Name"/>
+        <column xsi:type="varchar" name="phone" nullable="false" length="255" comment="Student Phone"/>
+        <column xsi:type="varchar" name="email" nullable="false" length="255" comment="Student Email"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="Student_Id" indexType="btree">
+            <column name="id"/>
+        </index>
+        <index referenceId="STUDENT_ADDING_USER_ID" indexType="btree">
+            <column name="user_id"/>
+        </index>
+    </table>
+</schema>
+        

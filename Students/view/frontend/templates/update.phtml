@@ -1,0 +1,13 @@
+<?php
+    $student = $block->getStudent();
+?>
+<div class="student-update-container">
+    <p><?php $block->getDetails('email'); ?></p>
+    <form class="student-update-form" method="post" action="<?php echo $block->getUrl('students/manage/save'); ?>" >
+        <input type="hidden" name="id" value="<?= $student->getId()?>"/>
+        Name: <input type="text" name="name"value="<?= $student['name']; ?>">
+        Phone: <input type="text" name="phone"value="<?= $student['email']; ?>">
+        Email: <input type="text" name="email"value="<?= $student['phone']; ?>">
+        <button type="submit">Submit</button>
+    </form>
+</div>

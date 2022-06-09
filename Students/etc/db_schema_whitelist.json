@@ -1,0 +1,19 @@
+{
+    "students": {
+        "column": {
+            "id": true,
+            "name": true,
+            "phone": true,
+            "email": true,
+            "customer_id": true,
+            "user_id": true
+        },
+        "index": {
+            "STUDENTS_ID": true,
+            "STUDENTS_USER_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

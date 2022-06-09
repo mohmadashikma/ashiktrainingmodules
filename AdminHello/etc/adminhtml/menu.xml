@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dckap_AdminHello::manager" title="Admin Menu" module="Dckap_AdminHello" sortOrder="10" resource="Dckap_AdminHello::manager"/>
+        <add id="Dckap_AdminHello::employee" title="Employee Manager" module="Dckap_AdminHello" sortOrder="0" parent="Dckap_AdminHello::manager"
+                action="adminhello/employee" resource="Dckap_AdminHello::employee"/>
+    </menu>
+</config>

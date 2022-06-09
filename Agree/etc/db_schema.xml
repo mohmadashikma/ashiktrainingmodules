@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Webkul Software.
+ *
+ * @category  Webkul
+ * @package   Webkul_CheckoutCustomization
+ * @author    Webkul
+ * @copyright Copyright (c) Webkul Software Private Limited (https://webkul.com)
+ * @license   https://store.webkul.com/license.html
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="quote" resource="sales" comment="quote table">
+            <column xsi:type="boolean" name="agree"  default="0" comment="Custom Agree"/>
+    </table>
+     <table name="sales_order" resource="sales" comment="sales order table">
+        <column xsi:type="boolean" name="agree"  default="0" comment="Custom Agree"/>
+    </table>
+</schema>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="dckap_literature::core" title="Resource" module="DCKAP_Literature" sortOrder="51" resource="DCKAP_Literature::sample"/>
+        <add id="dckap_literature::test" title="Catalogue" module="DCKAP_Literature" sortOrder="50" parent="dckap_literature::core" action="dckap_literature/items/" resource="DCKAP_Literature::items"/>
+    </menu>
+</config>

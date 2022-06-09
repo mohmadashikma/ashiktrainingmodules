@@ -1,0 +1,59 @@
+<?php $blockObj = $block->getLayout()->createBlock('DCKAP\Literature\Block\LiteratureListData'); ?>
+<?php $collection = $block->getLiterature(); ?>
+<div class="category-grid">
+    <h2 class="categories-grid-title">Catalogues</h2>
+    <div class="categories-grid-block">
+        <?php foreach ($collection as $key => $data): ?>
+            <div class="grid-box">
+                <?php if($data['image']): ?>
+                    <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$data['pdf']; ?>">
+                        <figure>
+                            <img src="<?php echo $block->getBaseUrl().'media/'.$data['image']; ?>">
+                        </figure>
+                    </a>
+                <?php else: ?>
+                    <p>No Image</p>
+                <?php endif; ?>
+                <h3>
+                    <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$data['pdf']; ?>">
+                        <?php echo $data['title']; ?>
+                    </a>
+                </h3>
+                <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$data['pdf']; ?>"><p><?php echo $data['sku']; ?> <span>(<?php echo $data['total_pages']; ?> pages, <?php echo $blockObj->formatSizeUnits($data['pdf']); ?> )</span></p></a>
+                <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$data['pdf']; ?>" class="action primary">VIEW/DOWNLOAD PDF</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<?php $blockLt = $block->getLayout()->createBlock('DCKAP\LiteratureMini\Block\LiteratureMiniListData'); ?>
+<?php $collectionmini = $blockLt->getLiteratureMini(); ?>
+<div class="category-grid">
+    <?php if(count($collectionmini) =='0'): ?>
+    <?php else: ?>
+        <hr />
+        <h2 class="categories-grid-title">Mini Catalogues</h2>
+    <?php endif; ?>
+    <div class="categories-grid-block">
+        <?php foreach ($collectionmini as $keys => $datas): ?>
+            <div class="grid-box">
+                <?php if($datas['image']): ?>
+                    <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$datas['pdf']; ?>">
+                        <figure>
+                            <img src="<?php echo $block->getBaseUrl().'media/'.$datas['image']; ?>">
+                            
+                        </figure>
+                    </a>
+
+                <?php else: ?>
+                    <p>No Image</p>
+                <?php endif; ?>
+                <h3>
+                    <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$datas['pdf']; ?>"><?php echo $datas['title']; ?></a>
+                </h3>
+                <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$datas['pdf']; ?>"><p><?php echo $datas['sku']; ?> <span>(<?php echo $datas['total_pages']; ?> pages, <?php echo $blockLt->formatSizeUnits($datas['pdf']); ?> )</span></p></a>
+                <a target="_blank" href="<?php echo $block->getBaseUrl().'media/'.$datas['pdf']; ?>" class="action primary">VIEW/DOWNLOAD PDF</a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
